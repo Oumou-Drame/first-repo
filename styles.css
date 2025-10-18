@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 96px;
+    padding-right: 24px;
+    background-color: rgb(248,248,248);
+}
+p {
+    font-family: Roboto, Arial;
+    margin-bottom: 0;
+    margin-bottom: 0;
+}
+.thumbnails {
+    width: 100%;
+    border-radius: 8px;
+    /*display: block;*/
+}
+/*.video-preview {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+}*/
+/*.channel-picture {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+}*/
+.video-info-grid{
+    display: grid;
+    grid-template-columns: 48px 1fr;
+}
+.video-title {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+/*.video-info {
+    display: inline-block;
+    width: 200px;
+}*/
+
+.profile-picture {
+    width: 80%;
+    border-radius: 40px;
+}
+.thumbnail-row {
+    margin-bottom: 8px;
+    position: relative;
+}
+.video-time {
+    position: absolute;
+    right: 5px;
+    bottom: 8px;
+    background-color: black;
+    color: white;
+    font-family: Roboto, Arial;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 2px;
+}
+.video-author {
+    font-size: 12px;
+    color: rgb(96,96,96);
+    margin-bottom: 4px;
+}
+.video-stats {
+    font-size: 12px;
+    color: rgb(96,96,96);
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 40px;
+}
+@media(max-width: 750px){
+    .video-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 751px) and (max-width: 999px){
+    .video-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 1000px ) {
+    .video-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.header {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*margin-bottom: 20px;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    background-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(228,228,228);
+    z-index: 100;
+}
+.sidebar {
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 55px;
+    width: 72px;
+    z-index: 100;
+    padding-top: 5px;
+    cursor: pointer;
+   
+}
+
+.sidebar-link {
+    background-color: white;
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;/*align-items permet d'aligner le texte et l'image au centre*/
+}
+
+.sidebar-link:hover {
+    background-color: lightgray;
+}
+
+.home-icon {
+    height: 24px;
+    margin-bottom: 4px;
+}
+.explore-icon {
+    height: 24px;
+    margin-bottom: 4px;
+}
+.subscriptions-icon {
+    height: 24px;
+    margin-bottom: 4px;
+}
+.originals-icon {
+    height: 24px;
+    margin-bottom: 4px;
+}
+.youtube-music-icon {
+    height: 24px;
+    margin-bottom: 4px;
+}
+.library-icon {
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.sidebar-link div {
+    font-family: Roboto,Arial;
+    font-size: 10px;
+}
+.leftSection {
+    margin-right: 70px;
+    display: flex;
+    align-items: center;
+    
+}
+.middleSection {
+    flex: 1;
+    margin-right: 30px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+#search-bar {
+    flex: 1;
+    width: 0;/*mean to shrink*/
+    height: 36px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(192,192,192);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 3px rgba(0,0,0,0.05);/*la valeur inset permet de mettre l'ombre à l'intérieur*/
+    
+}
+#search-bar::placeholder {
+    font-family: Roboto,Arial;
+    font-size: 16px;
+}
+
+.search-button {
+    height: 40px;
+    width: 66px;
+    margin-left: -1px;
+    cursor: pointer;
+}
+
+.search-button,
+.voice-search-button,
+.upload-icon-container,
+.notifications-icon-container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.search-icon {
+    height: 25px;
+    /*margin-top: 4px;*/
+}
+.search-button .tooltip,
+.voice-search-button .tooltip,
+.upload-icon-container .tooltip,
+.notifications-icon-container .tooltip {
+    font-family: Roboto, Arial;
+    position: absolute;
+    bottom: -30px;
+    background-color: gray;
+    color: white;
+    padding: 6px;
+    border-radius: 2px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap; /* Ceci permet au texte de ne pas passer à la ligne suivante*/
+}
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.notifications-icon-container:hover .tooltip {
+    opacity: 1;
+}
+
+.voice-search-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    border-color: rgb(192,192,192);
+    margin-left: 10px;
+    cursor: pointer;
+}
+.voice-search-button:hover {
+    background-color: rgb(215, 215, 215);
+}
+.voice-search-icon {
+    height: 24px;
+    /*margin-top: 4px;*/
+}
+
+.hamburger-menu {
+    height: 20px;
+    margin-left: 24px;
+    margin-right: 20px;
+}
+.youtube-logo {
+    height: 20px;
+}
+
+.rightSection {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    flex-shrink: 0; /* Don't shrink! sert à controler comment un élément flexible se réduit*/
+}
+.upload-icon {
+    height: 24px;
+    cursor: pointer;
+}
+
+.youtube-apps-icon {
+    height: 24px;
+    cursor: pointer;
+}
+
+.notifications-icon {
+    height: 24px;
+    cursor: pointer;
+}
+
+.user-picture {
+    height: 32px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.notifications-count {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-family: Roboto, Arial;
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border-radius: 12px;
+}
+
+
